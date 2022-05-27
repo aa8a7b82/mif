@@ -1,0 +1,29 @@
+att18: attack18.elf
+#att22: attack22.elf
+#att19: attack19.elf
+#att20: attack20.elf 
+#att24: attack24.elf
+
+#attack20.elf: mifattack.cpp cham.cpp common.h
+#	g++ mifattack.cpp cham.cpp -DCHAM64_ATTACK=20 -std=c++17 -march=native -O3 -o attack20.elf
+
+attack18.elf: mifattack.cpp cham.cpp recursive.cpp common.h
+	g++ mifattack.cpp recursive.cpp cham.cpp -DCHAM64_ATTACK=18 -std=c++17 -march=native -O3 -o attack18.elf
+
+attack19.elf: mifattack.cpp cham.cpp recursive.cpp common.h
+	g++ mifattack.cpp recursive.cpp cham.cpp -DCHAM64_ATTACK=19 -std=c++17 -march=native -O3 -o attack19.elf
+
+attack20.elf: mifattack.cpp cham.cpp recursive.cpp common.h cluster.h
+	g++ mifattack.cpp recursive.cpp cham.cpp -DCHAM64_ATTACK=20 -std=c++17 -march=native -O3 -o attack20.elf
+
+attack22.elf: mifattack.cpp cham.cpp recursive.cpp common.h
+	        g++ mifattack.cpp recursive.cpp cham.cpp -DCHAM64_ATTACK=22 -std=c++17 -march=native -O3 -o attack22.elf
+
+attack24.elf: mifattack.cpp cham.cpp recursive.cpp common.h
+	        g++ mifattack.cpp recursive.cpp cham.cpp -DCHAM64_ATTACK=24 -std=c++17 -march=native -O3 -o attack24.elf
+		
+#test_attack20: attack20.elf
+#	time ./attack11.elf 26.1 3
+
+clean:
+	rm -f attack19.elf attack18.elf attack20.elf attack22.elf attack24.elf
