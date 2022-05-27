@@ -1,4 +1,4 @@
-#Section 5.4 Experimental Verification of Gain
+# Section 5.4 Experimental Verification of Gain
 The following generates results in Table 8.
 Seed 1 = Key 1
 Seed 5 = Key 2
