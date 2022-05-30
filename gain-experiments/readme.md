@@ -1,6 +1,8 @@
 # Experimental Verification of Gain
 The following generates results in Table 8.
+
 Seed 1 = Key 1
+
 Seed 5 = Key 2
 
 Compile with:
