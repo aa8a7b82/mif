@@ -1,7 +1,10 @@
 # Meet-in-the-Filter
 
-## cham-exp.cpp 
-Cham experiments - Success rate over random keys and key-dependent differential probabilities
+### gain-experiments
+Files for experimental verification of gain in Table 8
+
+### cham-exp.cpp 
+Cham experiments (Table 2 and 3) - Success rate over random keys and key-dependent differential probabilities
 
 Compilation:
 ```
