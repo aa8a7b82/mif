@@ -94,8 +94,6 @@ void ChamKeyInvert(word_t K[8]) {
         KR[i] = ks[ctr^1]^ROTR16(ks[ctr^1], 2)^ROTR16(ks[ctr^1], 3)^ROTR16(ks[ctr^1], 4)^ROTR16(ks[ctr^1], 6)^ROTR16(ks[ctr^1], 7)^ROTR16(ks[ctr^1], 9)^ROTR16(ks[ctr^1], 12)^ROTR16(ks[ctr^1], 15);
         printf("%x ", KR[i]);
         ctr++;
-
-        //0,2,3,4,6,7,9,12,15
     }
 }
 
@@ -114,7 +112,6 @@ void ChamEncryptOnly(word_t *pt, word_t *inputDiff, int nrounds, word_t *ctdiff)
     ctp[3] = pt[3]^inputDiff[3];
 
     //generate encryption trace
-    //TODO
     word_t tmp;
     for(int i=0; i<nrounds; i++){
         //Encrypt first plaintext
@@ -141,8 +138,6 @@ void ChamEncryptOnly(word_t *pt, word_t *inputDiff, int nrounds, word_t *ctdiff)
         ct[4*i+7] = tmp; //d = tmp;
 
         //Encrypt second plaintext
-        //Speck: ER(ctp[2*i+2], ctp[2*i+3], ks[i]);
-
         ctp[4*i+4] = ctp[4*i+0]; //a
         ctp[4*i+5] = ctp[4*i+1]; //b
         ctp[4*i+6] = ctp[4*i+2]; //c
@@ -175,11 +170,6 @@ void ChamEncryptOnly(word_t *pt, word_t *inputDiff, int nrounds, word_t *ctdiff)
     pt[1] = ct[4*nrounds +1];
     pt[2] = ct[4*nrounds +2];
     pt[3] = ct[4*nrounds +3];
-
-    // for (int i=0; i<4; i++) {
-        // printf("%x ", pt[i]);
-    // }
-    // printf("\n");
 }
 
 //Calculate success rate of finding right pairs
