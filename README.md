@@ -31,3 +31,19 @@ Keys (MSB -> LSB from right to left):
   4 - 4661 480e 53e9 5fda 0f46 6169 3044 d509
   
   5 - 23a8 d74f 7698 65ef 11a4 7198 6ff1 0c34
+  
+### katan-expand.cpp
+For KATAN-48 and KATAN-64: Propagates and counts the number of trails from a given output difference.
+Compilation:
+```
+g++ katan-expand.cpp -o kmf.elf
+```
+Usage example: Propagate 2 rounds starting from a 77th round output difference for KATAN64
+```
+./kmf.elf 01000400200040A2 77 2 64
+```
+Usage example: Propagate 7 rounds starting from an 87th round output difference for KATAN48
+```
+./kmf.elf 0000400000002092 87 7 48
+```
+
