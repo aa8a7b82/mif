@@ -1,18 +1,18 @@
 # Meet-in-the-Filter
 
 ### gain-experiments
-Files for experimental verification of gain in Table 8
+Files for experimental verification of gain in Appendix D
 
 
 ### cham-exp.cpp 
-Cham experiments (Table 2 and 3) - Success rate over random keys and key-dependent differential probabilities
+Cham experiments - Success rate over random keys and key-dependent differential probabilities in Appendix D
 
-To generate results in Table 2 (success rate over random keys):
+To generate results for success rate over random keys:
 ```
 ./cham.elf <rounds (12 to 24)>
 ```
 
-To generate results in Table 3 (key-dependent differentials):
+To generate results  for key-dependent differentials:
 ```
 ./cham.elf 1 <key selection (1 to 5)>
 ```
@@ -30,7 +30,7 @@ Keys (MSB -> LSB from right to left):
   
   
 ### katan-expand.cpp
-For KATAN-48 and KATAN-64: Propagates and counts the number of trails from a given output difference.
+For KATAN-48 and KATAN-64: Propagates and counts the number of trails from a given output difference (Appendix E)
 
 Usage example: Propagate 2 rounds starting from a 77th round output difference for KATAN64
 ```
