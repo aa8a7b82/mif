@@ -1,4 +1,4 @@
-# Experimental Verification of Gain
+### Experimental Verification of Gain
 The following generates results in Table 8.
 
 Keys (MSB -> LSB from right to left):
