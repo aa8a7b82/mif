@@ -1,5 +1,5 @@
 ### Experimental Verification of Gain
-The following generates results in Table 8.
+The following generates the experimental gain results in the paper.
 
 Keys (MSB -> LSB from right to left):
 
