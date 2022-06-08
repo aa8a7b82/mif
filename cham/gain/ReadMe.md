@@ -13,7 +13,7 @@ make att18
 ```
 
 Usage:
-```ruby
+```
 Format: ./attack18.elf [data] [c] [seed] [key bits to recover] [trailID]
 ```
 ```
