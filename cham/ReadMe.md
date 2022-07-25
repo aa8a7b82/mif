@@ -20,3 +20,9 @@ Keys (MSB -> LSB from right to left):
 ---
 
 [gain](./gain) contains code for experimental verification of gain theory.
+
+---
+
+[cham-key-dependent-20r](./cham-key-dependent-20r.stp)
+
+Performs CHAM search for 20r key-dependent trail (Master Key: 4661 480e 53e9 5fda 0f46 6169 3044 d509). Note that for up to 19 rounds, the search completes in less than a minute. No solution was found for 20r even after 1 week.
