@@ -1,5 +1,5 @@
 % Input File for STP
-% CHAM w=16 rounds=20
+% CHAM search for 20r key-dependent trail (Master Key: 4661 480e 53e9 5fda 0f46 6169 3044 d509)
 
 
 X00,X01,X02,X03,X04,X05,X06,X07,X08,X09,X010,X011,X012,X013,X014,X015,X016,X017,X018,X019,X020: BITVECTOR(16);
