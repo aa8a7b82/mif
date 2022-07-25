@@ -1,1 +1,1 @@
-These are the cipher models to be used with CryptoSMT (https://github.com/kste/cryptosmt)
+These are the cipher models for KATAN to be used with CryptoSMT (https://github.com/kste/cryptosmt)
