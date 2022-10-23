@@ -96,7 +96,6 @@ void work(i64 rno_start, i64 n_rounds_max, word diff) {
             auto wt_trail = cur[diff].wt_trail;
             auto prob_diff = cur[diff].prob_diff;
 
-            assert(!(wt_trail & 3));
             assert(!(prob_diff & 3));
 
             if (num) {
@@ -186,8 +185,8 @@ void work(i64 rno_start, i64 n_rounds_max, word diff) {
 }
 
 int main(int argc, char * argv[]) {
-    i64 rno_start;
-    i64 n_rounds_max = 80;
+    i64 rno_start = 1;
+    i64 n_rounds_max = 50;
     word diff;
     sscanf(argv[1], "%x", &diff);
     sscanf(argv[2], "%ld", &rno_start);
