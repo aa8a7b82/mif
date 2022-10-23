@@ -1,12 +1,14 @@
 ### [katan32-expand.cpp](./katan32-expand.cpp)
 For KATAN-32: Propagates and counts the number of trails from a given output difference.
 
-Usage example: MiF number of trails (exhaustive) from differences 21000004 and 21000006 before round 108, up to +50 rounds (takes a lot of RAM):
+Usage example: MiF number of trails (exhaustive) from differences 21000004 and 21000006 before round 108, up to +50 rounds:
+
+**Warning**: requires about 400 GiB of RAM (it uses 2^32 x 2 128-bit integers for precise probability computations, allowing reasonable # of rounds; for the sake of the paper's results - counting trails - the code can be simplified to use much less RAM and not compute the accumulated probabilities).
 
 ```bash
-$ ./diff_enum log_21000004 108 50 | tee log_21000004_108.txt
+$ ./kmf32.elf 21000004 108 50 | tee log_21000004_108.txt
 ...
-$ ./diff_enum log_21000006 108 50 | tee log_21000006_108.txt
+$ ./kmf32.elf 21000006 108 50 | tee log_21000006_108.txt
 ...
 $ grep '+ 23' log_2100000[46]_108.txt
 log_21000004_108.txt:rno 130 (+ 23) (IR=1): avg trail -30.36 avg diff -27.59 (avg trail wt / round  -1.32) (round wt  -1.81) max trails   4.58
