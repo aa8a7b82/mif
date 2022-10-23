@@ -1,4 +1,6 @@
 /*
+g++ katan32-mif.cpp -O3 -o kmf-mif.elf
+
 Experiment for KATAN32 attack:
 Input difference has been hardcoded.
 Select between two output differences: 21000004 or 21000006.

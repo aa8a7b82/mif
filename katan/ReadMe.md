@@ -5,6 +5,8 @@ Usage example: MiF number of trails (exhaustive) from differences 21000004 and 2
 
 **Warning**: requires about 400 GiB of RAM (it uses 2^32 x 2 128-bit integers for precise probability computations, allowing reasonable # of rounds; for the sake of the paper's results - counting trails - the code can be simplified to use much less RAM and not compute the accumulated probabilities).
 
+Timewise, takes about an hour on a single core.
+
 ```bash
 $ ./kmf32.elf 21000004 108 50 | tee log_21000004_108.txt
 ...

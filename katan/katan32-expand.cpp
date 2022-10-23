@@ -1,4 +1,23 @@
-// g++ katan32-expand.cpp -O3 -o kmf32.elf
+/*
+g++ katan32-expand.cpp -O3 -o kmf32.elf
+./kmf32.elf 21000004 108 50 | tee log_21000004_108.txt
+./kmf32.elf 21000006 108 50 | tee log_21000006_108.txt
+
+The code is a simple dynamic programming approach.
+We maintain 2 lists for statistics for each possible state difference (2^32 differences):
+- one for round r-1;
+- one for round r.
+Each difference expands forward to at most 4 possible differences.
+Thus, we can expand list from round r-1 to a list from round r by visiting the 2^32 * 4 edges.
+
+For each difference, we maintain:
+- the number of trails;
+- the differential probability;
+- the minimum trail weight.
+
+For the probability, in order to be able to expand many rounds without losing precision,
+we use 128-bit integer P to represent probability P/2**127.
+*/
 
 #include <bits/stdc++.h> 
 
@@ -66,9 +85,9 @@ static inline void extend(i64 rno, word diff, auto func) {
 }
 
 struct Entry {
-    u128 num;
-    t_PROB prob_diff;
-    i32 wt_trail;
+    u128 num;  // number of trails ending in this difference
+    t_PROB prob_diff; // differential probability - total probability (sum over all trails) ending in this difference
+    i32 wt_trail; // best trail weight (minimum weight among all trails to this difference)
 };
 
 void work(i64 rno_start, i64 n_rounds_max, word diff) {

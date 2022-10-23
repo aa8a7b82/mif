@@ -1,7 +1,12 @@
 /*
-Implementation of KATAN48 MiF to count number of trails
+g++ katan-expand.cpp -O3 -o kmf.elf
+
+Implementation of KATAN48/KATAN64 MiF to count number of trails
 Start from an input difference, propagate all the way until an output difference. 
-Increment a counter for the output difference
+Increment a counter for the output difference.
+
+It is a simple recursive method, so it may revisit same differences many times.
+I.e., it is not a dynamic programming approach, and it essentially goes through every trail.
 */
 
 #include <unordered_map>
