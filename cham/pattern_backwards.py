@@ -6,12 +6,12 @@ import math
 from tqdm import tqdm
 from binteger import Bin
 from collections import Counter
-from cham import CHAM64_expand_back, CHAM64_expand_back_count_only
+from cham import CHAM64_expand_back, CHAM64_expand_back_count_only, ATTACK52_DeltaIN
 
-DeltaIN = (0x0020, 0x0010, 0x1020, 0x2800)
+# ATTACK52_DeltaIN = (0x0020, 0x0010, 0x1020, 0x2800)
 
 diffs = [
-    Counter([DeltaIN]),
+    Counter([ATTACK52_DeltaIN]),
 ]
 NR = 4
 n_expanded = 0

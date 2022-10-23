@@ -1,6 +1,9 @@
 from binteger import Bin
 from arx import ARX16
 
+ATTACK52_DeltaIN = (0x0020, 0x0010, 0x1020, 0x2800)
+ATTACK52_DeltaOUT = (0x2000, 0x1000, 0x2810, 0x0020)
+
 
 def CHAM64_expand_back(a, b, c, d, rno):
     """rno: 0-based"""
